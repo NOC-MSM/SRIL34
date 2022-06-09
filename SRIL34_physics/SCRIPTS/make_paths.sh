@@ -1,6 +1,6 @@
-export CONFIG=SANH
-export WORK=/work/n01/n01/jrule/
-export AWORK=/work/n01/n01/jrule/
+export CONFIG=<configuration name>
+export WORK=/work/n01/n01/<user>
+export AWORK=/work/n01/n01/<user>
 export WDIR=$WORK/$CONFIG
 export NEMO=$WORK/$CONFIG/NEMO_4.0.4
 export DOMAIN=$WDIR/DOMAIN

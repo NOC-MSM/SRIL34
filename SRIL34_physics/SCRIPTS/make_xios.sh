@@ -3,22 +3,16 @@ cd $WDIR
 #download install xios
 ####################################
 #load modules
-#module -s restore /work/n01/shared/acc/n01_modules/ucx_env
 module swap craype-network-ofi craype-network-ucx
 module swap cray-mpich cray-mpich-ucx
 module load cray-hdf5-parallel/1.12.0.7
 module load cray-netcdf-hdf5parallel/4.7.4.7
-
-#module load cray-hdf5-parallel/1.12.0.7
-#module load cray-netcdf-hdf5parallel/4.7.4.7
-#module load cmake
 
 #download xios
 svn checkout http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/branchs/xios-2.5 $XIOS_DIR
 cd $XIOS_DIR
 
 #copy the arch
-#cp /work/n01/shared/acc/xios-2.5/arch/arch-X86_ARCHER2-Cray.* arch/.
 cp /work/n01/shared/nemo/xios-2.5/arch/arch-X86_ARCHER2-Cray.* arch/.
 
 #compile xios
