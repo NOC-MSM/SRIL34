@@ -33,6 +33,9 @@ cd $NEMO
 #cd $CDIR/$CONFIG
 #cp $GITCLONE/cpp_SEAsia.fcm cpp_$CONFIG.fcm
 #cp -r -f $GITCLONE/MY_SRC ./
+cd $CDIR/$CONFIG
+cp $GITCLONE/cpp_SANH.fcm cpp_$CONFIG.fcm
+cp -r -f $GITCLONE/MY_SRC ./
 
 #make configuration with updates included 
 cd $NEMO
