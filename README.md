@@ -12,7 +12,8 @@ This repository contains the scripts and initialisation file to run the SRIL34 m
 - compiling FABM and ERSEM (WIP)
 - setting up the SRIL34 domain (WIP)
 - installing PyNEMO  
-- creating initial conditions and boundary conditions (WIP)
+- creating open boundary conditions 
+- Creating ER5 forcing (WIP)
 - running the SRIL34 model. (WIP)
 
 # Getting Started
