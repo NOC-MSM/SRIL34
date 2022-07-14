@@ -9,7 +9,7 @@ This repository contains the scripts and initialisation file to run the SRIL34 m
 - setting up paths and file directory structure
 - compiling xios
 - compiling NEMO
-- compiling FABM and ERSEM (WIP)
+- compiling FABM and ERSEM 
 - setting up the SRIL34 domain (WIP)
 - installing PyNEMO  
 - creating open boundary conditions 
