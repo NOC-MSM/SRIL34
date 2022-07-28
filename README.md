@@ -8,7 +8,7 @@ Configuration of the SRIL34 model. The model domain covers the area around Sri L
 This repository contains the scripts and initialisation file to run the SRIL34 model (physics only), as well as the SRIL34-ERSEM (passive tracers) configuration. It contains instructions for: 
 - setting up paths and file directory structure
 - compiling xios
-- compiling NEMO
+- compiling NEMO and tools
 - compiling FABM and ERSEM 
 - setting up the SRIL34 domain (WIP)
 - installing PyNEMO  
