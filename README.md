@@ -13,7 +13,7 @@ This repository contains the scripts and initialisation file to run the SRIL34 m
 - setting up the SRIL34 domain (WIP)
 - installing PyNEMO  
 - creating open boundary conditions 
-- Creating ER5 forcing (WIP)
+- Creating ERA5 forcing 
 - running the SRIL34 model. (WIP)
 
 # Getting Started
