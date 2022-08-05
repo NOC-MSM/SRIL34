@@ -1,0 +1,54 @@
+
+
+from netCDF4 import Dataset as DS
+from numpy import meshgrid, arange, array, zeros
+
+
+
+if __name__=='__main__':
+    
+    ntracers=1                          # number of tracers to generate
+    day0s=array([144],dtype=int)        # first day of leak for each tracer (144=25 May)
+    leak_durations=array([1],dtype=int)  # duration of the leak for each tracer in days
+    total_tonnes=array([1100.])          # total mass in tonnes for each of the tracer
+    conversion_factors=array([16650016.65]) # tonnes to mmol (=1e9/60.06) - Urea
+    
+    Yindex=array([153],dtype=int)       # Lat index per each tracer leak
+    Xindex=array([102],dtype=int)       # Lon index per each tracer leak
+    
+    name='Scenario_urea1100_leak1day.nc'
+    
+    nctemplate=DS('/projectsa/sanh/SRIL34/RunFiles/domain_cfg.nc')
+    lat=nctemplate.variables['nav_lat'][:]
+    lon=nctemplate.variables['nav_lon'][:]
+    area=(nctemplate.variables['e1t'][:]*nctemplate.variables['e2t'][:]).squeeze()
+    nctemplate.close()
+    
+    
+    ncout=DS(name,'w')
+    ncout.createDimension('time',None)
+    ncout.createDimension('lon',lon[0,:].size)
+    ncout.createDimension('lat',lat[:,0].size)
+    ncout.createVariable('time','f8',('time'))
+    ncout['time'].units="days since 2021-01-01 00:00:00 UTC"
+    ncout['time'].calendar='standard'
+    ncout['time'][:]=arange(365)
+    ncout.createVariable('lon','f8',('lat','lon'))
+    ncout['lon'].units='degree_east'
+    ncout['lon'].standard_name='longitude'
+    ncout['lon'][:]=lon
+    ncout.createVariable('lat','f8',('lat','lon'))
+    ncout['lat'].units='degree_north'
+    ncout['lat'].standard_name='latitude'
+    ncout['lat'][:]=lat
+    for nt in range(ntracers):
+       flux_array=zeros((365,lat.shape[0],lon.shape[1]))
+       ncout.createVariable('T{:d}_flux'.format(nt+1),'f8',('time','lat','lon'))
+       ncout.variables['T{:d}_flux'.format(nt+1)].units='mmol/m2/s'
+       ncout.variables['T{:d}_flux'.format(nt+1)].longname='leaking flux for tracer #{:d}'.format(nt+1)
+       flux=total_tonnes[nt]*conversion_factors[nt]/(leak_durations[nt]*86400.)/area[Yindex[nt],Xindex[nt]]
+       flux_array[day0s[nt]:day0s[nt]+leak_durations[nt],Yindex[nt],Xindex[nt]]=flux
+       ncout.variables['T{:d}_flux'.format(nt+1)][:]=flux_array
+    ncout.close()
+        
+    
