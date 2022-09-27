@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
 #SBATCH --cpus-per-task=1
-#SBATCH --account=n01-ECOWIND
+#SBATCH --account=<you_proj_account>
 #SBATCH --partition=standard
 #SBATCH --qos=standard
 
