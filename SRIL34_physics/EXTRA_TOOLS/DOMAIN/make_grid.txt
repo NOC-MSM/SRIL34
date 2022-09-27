@@ -1,0 +1,71 @@
+#INSTRUCTIONS ON HOW TO CREATE COORODINATES AND BATHYMETRY USING GRIDBUILDER
+
+#--INSTALLS ON MATLAB----
+
+#Note this is done on livljobs8
+
+#Download GridBuilder 
+
+wget https://austides.com/wp-content/uploads/GridBuilder_toolbox.mltbx
+
+#Open matlab:
+
+module load matlab
+matlab
+
+#When in matlab, click on 
+GridBuilder_toolbox.mltbx to install 
+
+#Check Add-Ons location in Preferences:
+~/Documents/MATLAB/Add-Ons/Toolboxes/
+
+#Add a trick to allow Gridbuilder to read *.nc files:
+
+cp getUserBathymetry.m ~/Documents/MATAB/Add-Ons/Toolboxes/Gridbuilder/Functions/
+
+Change paths in environment.m and run
+
+---------------------
+
+In matlab type:
+
+GridBuilder
+
+This will open up the Gridbuilder GUI
+
+Go to File --> Import --> Bathymetry --> *your bathymetry file* (in my case, its LME_32_34_GEBCO_bathy.nc)  
+
+Draw your grid on the map, starting from the bottom left-hand corner (more stable this way)
+
+Change the resolution of your grid in the box at the top
+
+You can rotate the grid using the "Grid Edit" tools on the right hand side of the GUI
+
+When happy with your grid, go to Mask Settings and choose GSHHC Coastlines (this takes a while so should be your last step) 
+
+Save your grid using a unique identifier e.g. SRIL34_Grid.mat (SRIL34 stands for Sri Lanka in LME number 34) 
+
+------------------
+
+Now that you have your grid, open GridBuilder_to_NEMO.m
+
+Change the grid_path to reflect the location of your saved grid file 
+Change the domain paths to reflect your directories (note the assessment path is not called in this script)
+
+DOMNAM is the unique identifier you used (e.g. SRIL34) 
+
+Run the script
+
+This should spit out your chosen grid in NEMO compatable files: 
+
+SRIL34_bathy_meter.nc 
+SRIL34_coordinates.nc 
+
+This files will then be used to create the domain_cfg.nc file 
+
+
+
+
+
+
+
