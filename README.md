@@ -10,11 +10,11 @@ This repository contains the scripts and initialisation file to run the SRIL34 m
 - compiling xios
 - compiling NEMO and tools
 - compiling FABM and ERSEM 
-- setting up the SRIL34 domain (WIP)
+- setting up the SRIL34 domain 
 - installing PyNEMO  
 - creating open boundary conditions 
 - Creating ERA5 forcing 
-- running the SRIL34 model. (WIP)
+- running the SRIL34 model. 
 
 # Getting Started
 
@@ -25,7 +25,5 @@ git clone https://github.com/NOC-MSM/SRIL34.git
 ```
 
 then follow the instructions on the [wiki](https://github.com/NOC-MSM/SRIL34/wiki)
-
-# Repository Structure
-(WIP) 
+ 
 
