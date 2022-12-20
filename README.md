@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/record/7464071)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7464071.svg)]([https://zenodo.org/record/7352697](https://zenodo.org/record/7464071))
 # SRIL34
 Configuration of the SRIL34 model. The model domain covers the area around Sri Lanka with aproximatly 1/60th degree resolution, and is based on GEBCO bathymetry. It uses ERA5 forcing data and Copernicus (CMEMS) reanalysis data.
 
