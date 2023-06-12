@@ -20,7 +20,7 @@ end
 if strcmp(field_3D,'tn')
     name_read=string( {'thetao'} );
 end
-Temp_in=ncread('/scratch/jrule/CMEMS_PHY_001_024/CMEMS_2019_01_01_download.nc',[name_read]);
+Temp_in=ncread('<path_to_file>/CMEMS_2019_01_01_download.nc',[name_read]);
 
 [lat_c lon_c]=meshgrid(lat_c1,lon_c1);
 

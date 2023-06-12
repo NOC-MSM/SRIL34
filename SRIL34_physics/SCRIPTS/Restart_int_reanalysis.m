@@ -5,9 +5,9 @@ clear;clc;close all
 % vertical coordinates)
 % Anna Katavouta, NOC, Liverpool 07/2020
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-addpath '/vkamino/scratch/accord/SEAsia_R36/RESTART_SEAsiaR36/Inpaint_nans'
+addpath '<path_to_Inpaint_nans_Matlab_fucntion>/Inpaint_nans'
 %% read coordinates to be interpolated into
- file='/projectsa/accord/SANH_jrule/PyNEMO3/SRIL34_PynemoFiles/domain_cfg.nc';
+ file='<path_to_file>/domain_cfg.nc';
 % lat_R36=ncread(file,'nav_lat');
 % lon_R36=ncread(file,'nav_lon');
 e3t_R36=ncread(file,'e3t_0');
@@ -15,7 +15,7 @@ e3u_R36=e3t_R36;
 e3v_R36=e3t_R36;
 
 
-file='/projectsa/accord/SANH_jrule/PyNEMO3/SRIL34_PynemoFiles/mesh_mask.nc';
+file='<path_to_file>/mesh_mask.nc';
 mask_t=double(ncread(file,'tmask'));
 mask_u=double(ncread(file,'umask'));
 mask_v=double(ncread(file,'vmask'));
@@ -26,7 +26,7 @@ e3u_R36=ncread(file,'e3u_0');
 e3v_R36=ncread(file,'e3v_0');
 
 %% read coordinates from Restart to be interpolated 
-file='/scratch/jrule/CMEMS_PHY_001_024/CMEMS_2019_01_01_download.nc';
+file='<path_to_file>/CMEMS_2019_01_01_download.nc';
 lat_12=ncread(file,'latitude');
 lon_12=ncread(file,'longitude');
 Depth_12=ncread(file,'depth');

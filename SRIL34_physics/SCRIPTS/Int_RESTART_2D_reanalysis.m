@@ -7,7 +7,7 @@ vi tifunction Temp_out=Int_RESTART_2D_reanalysis(lat_h,lon_h,mask_h,lat_c1,lon_c
 %% Read the [lat_c lon_c]=meshgrid(lat_c1,lon_c1);
 [lat_c lon_c]=meshgrid(lat_c1,lon_c1);
 
-Temp_in=ncread('/scratch/jrule/CMEMS_PHY_001_024/CMEMS_2019_01_01_download.nc','zos');
+Temp_in=ncread('<path_to_file>/CMEMS_2019_01_01_download.nc','zos');
 Temp_out=griddata(double(lon_c),double(lat_c),double(mask_c(:,:,1).*Temp_in),double(lon_h),double(lat_h),'linear');
 Temp_out=inpaint_nans(Temp_out,2);
 Temp_out(isnan(Temp_out))=0;
@@ -23,7 +23,7 @@ Temp_out(isnan(Temp_out))=0;
 %     F_new2=reshape(F_new,size(lon_h,1),size(lon_h,2));
 
 %% read extra / set up the file to write / write the file
-lev=ncread('/projectsa/accord/SANH_jrule/PyNEMO3/SRIL34_PynemoFiles/domain_cfg.nc','nav_lev');
+lev=ncread('<path_to_file>/domain_cfg.nc','nav_lev');
 x=size(lon_h,1);y=size(lon_h,2);z=length(lev);
 
 
@@ -36,7 +36,7 @@ if ~isfile(filename)
     %adatrj=0%=ncread('SEAsia_R12_notide_03506400_restart.nc','adatrj');
     ntime=0;%ntime=ncread('SEAsia_R12_notide_03506400_restart.nc','ntime');
     %rdt=ncread('SEAsia_R12_notide_03506400_restart.nc','rdt');
-    e3t_new=ncread('/projectsa/accord/SANH_jrule/PyNEMO3/SRIL34_PynemoFiles/domain_cfg.nc','e3t_0');
+    e3t_new=ncread('<path_to_file>/domain_cfg.nc','e3t_0');
 
     nccreate(filename,'nav_lat', 'Dimensions',{'x',x,'y',y})
     ncwrite(filename,'nav_lat',lat_h);
