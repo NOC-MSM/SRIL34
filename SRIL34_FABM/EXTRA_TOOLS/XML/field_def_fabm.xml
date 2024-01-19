@@ -1,0 +1,39 @@
+<field_definition level="1" prec="4" operation="average" enabled=".TRUE." default_value="1.e20" >
+ <field_group id="ptrc_T" grid_ref="grid_T_3D">
+  <field id="T1_n" long_name="tracer 1 nitrogen" unit="mmol N/m^3" default_value="-.200E+21" />
+ </field_group>
+ <field_group id="sf_T" grid_ref="grid_T_2D">
+ </field_group>
+ <field_group id="diad_T" grid_ref="grid_T_2D">
+  <field id="T1_n_sms" long_name="tracer 1 nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="T1_n_w" long_name="tracer 1 nitrogen vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="T1__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="tracer 1 light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="zero" long_name="zero" unit="" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="zero_sms_tot" long_name="zero_sms_tot" unit="" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="zero_w_tot" long_name="zero_w_tot" unit="" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="T1_w_bot" long_name="tracer 1 near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
+  <field id="T1_n_sfl" long_name="tracer 1 nitrogen surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="T1_n_bfl" long_name="tracer 1 nitrogen bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="T1__surface_albedo" long_name="tracer 1 albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
+  <field id="T1__surface_drag_coefficient_in_air" long_name="tracer 1 surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
+  <field id="T1_flux_target_sfl" long_name="T1_flux target variable surface flux" unit="UNITS m-3*m/s" default_value="0.000E+00" />
+  <field id="zero_hz" long_name="zero_hz" unit="" default_value="0.000E+00" />
+  <field id="zero_sfl_tot" long_name="zero_sfl_tot" unit="" default_value="0.000E+00" />
+  <field id="zero_bfl_tot" long_name="zero_bfl_tot" unit="" default_value="0.000E+00" />
+  <field id="zero_hz_sms_tot" long_name="zero_hz_sms_tot" unit="" default_value="0.000E+00" />
+  <field id="T1_n_sfl_tot_calculator_result" long_name="tracer 1 n_sfl_tot_calculator result" unit="" default_value="0.000E+00" />
+  <field id="T1_n_VINT" long_name="depth-integrated tracer 1 nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
+  <field id="T1_n_sms_VINT" long_name="depth-integrated                     tracer 1 nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="T1_n_w_VINT" long_name="depth-integrated                     tracer 1 nitrogen vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="T1__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     tracer 1 light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
+  <field id="zero_VINT" long_name="depth-integrated                     zero" unit="*m" default_value="0.0" />
+  <field id="zero_sms_tot_VINT" long_name="depth-integrated                     zero_sms_tot" unit="*m" default_value="0.0" />
+  <field id="zero_w_tot_VINT" long_name="depth-integrated                     zero_w_tot" unit="*m" default_value="0.0" />
+ </field_group>
+ <field_group id="fabm_scalar" grid_ref="grid_0">
+  <field id="total_nitrogen" long_name="total_nitrogen" unit="mmol m-3" default_value="-.200E+21" />
+ </field_group>
+ <field_group id="fabm_input" grid_ref="grid_T_2D">
+  <field id="INP_T1_flux" long_name="T1_flux input" unit="" default_value="-.200E+21" />
+ </field_group>
+</field_definition>

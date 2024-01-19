@@ -1,0 +1,5 @@
+<field_definition level="1" prec="4" operation="average" enabled=".TRUE." default_value="1.e20" >
+ <field_group id="misc_T" grid_ref="grid_T_3D">
+  <field id="T1_n_e3t" long_name="tracer depth integrated" unit="mmol N/m^2/d" default_value="-.200E+21" > T1_n * e3t </field>
+ </field_group>
+</field_definition>

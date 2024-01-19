@@ -1,0 +1,11 @@
+!              !  file name   ! frequency (hours) ! variable  ! time interp. !  clim  ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
+!              !              !  (if <0  months)  !   name    !   (logical)  !  (T/F) ! 'monthly' ! filename ! pairing  ! filename      !
+&variable
+   name='T1_flux/flux'
+   sn=         'Scenario_30May_leak1hour.nc',1,'T1_flux', .false.,  .true.,   'yearly',     '',         '',        ''
+/
+!&riverdata
+!   name='T1_n'
+!   sn=         'river_trc.nc',-1,'tracer_runoff', .false.,  .true.,   'yearly',     '',         '',        ''
+!   rfac=1.0 !
+!/

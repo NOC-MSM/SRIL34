@@ -1,0 +1,16 @@
+check_conservation: false
+require_initialization: true
+instances:
+  T1:
+    long_name: tracer 1
+    model: ersem/pelagic_base
+    parameters:
+      composition: n                                       # elemental composition
+      c0: 0.001                                            # background carbon concentration (mg C/m^3), default = 0.0
+    initialization:
+      n: 0.0                                               # nitrogen (mmol N/m^3)
+  #Inputs:
+  T1_flux:
+    model: external_surface_flux
+    coupling:
+      target: T1/n

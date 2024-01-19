@@ -4,8 +4,6 @@
 #
 # Note that a precompiled version of XIOS2.5 is available for use here:
 # /work/n01/shared/acc/xios-2.5
-#
-# Updated after Archer2 upgrade
 #################################################
 
 # Build XIOS with Cray compiler
@@ -13,8 +11,8 @@
 #module load cmake
 module swap craype-network-ofi craype-network-ucx
 module swap cray-mpich cray-mpich-ucx
-module load cray-hdf5-parallel/1.12.2.1
-module load cray-netcdf-hdf5parallel/4.9.0.1
+module load cray-hdf5-parallel/1.12.0.7
+module load cray-netcdf-hdf5parallel/4.7.4.7
 
 XIOS_DIR=$CODE_DIR/xios
 XIOS_INSTALL=$CODE_DIR/xios-cray
